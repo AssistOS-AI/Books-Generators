@@ -7,40 +7,11 @@ export class ProofReaderPage {
     }
 
     beforeRender() {
-        this.background = `spaces/${assistOS.space.id}/applications/ProofReader/assets/background.png`;
-        if(!this.personality){
-            this.selectedPersonality = `<option value="" disabled selected hidden>Select personality</option>`;
-        }else {
-            this.selectedPersonality = `<option value="${this.personality.id}" selected>${this.personality.name}</option>`
-        }
-        let stringHTML = "";
-        for(let personality of assistOS.space.personalities){
-            stringHTML+=`<option value=${personality.id}>${personality.name}</option>`;
-        }
-        this.personalitiesOptions = stringHTML;
+
     }
 
     afterRender(){
-        if(this.generatedText!==undefined){
-            let refreshButton=this.element.querySelector("#refresh-button");
-            let copyButton=this.element.querySelector("#copy-button");
-            try{
-                refreshButton.style.display="block";
-                copyButton.style.display="block";
-            }catch(e){
-                console.error("Error trying to change the display of the buttons"+e);
-            }
-        }
-        let textElement = this.element.querySelector("#text");
-        textElement.value = this.text;
-        if(this.generatedText){
-            let aiText = this.element.querySelector(".generated-text-container");
-            aiText.style.display = "flex";
-        }
-        let detailsElement = this.element.querySelector("#details");
-        if(this.details){
-            detailsElement.value = this.details;
-        }
+
     }
 
     async executeProofRead(formElement) {
