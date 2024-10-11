@@ -1,15 +1,15 @@
 export class RoutingService {
     constructor() {}
     async navigateToLocation(locationArray = [], appName) {
-        const PROOFREADER_PAGE = "proofreader-page";
+        const BOOKSGENERATOR_PAGE = "books-generator-page";
 
-       if (locationArray.length === 0 || locationArray[0] === PROOFREADER_PAGE) {
-            const pageUrl = `${assistOS.space.id}/${appName}/${PROOFREADER_PAGE}`;
-            await assistOS.UI.changeToDynamicPage(PROOFREADER_PAGE, pageUrl);
+       if (locationArray.length === 0 || locationArray[0] === BOOKSGENERATOR_PAGE) {
+            const pageUrl = `${assistOS.space.id}/${appName}/${BOOKSGENERATOR_PAGE}`;
+            await assistOS.UI.changeToDynamicPage(BOOKSGENERATOR_PAGE, pageUrl);
             return;
         }
-         if(locationArray[locationArray.length-1]!== PROOFREADER_PAGE){
-         console.error(`Invalid URL: URL must end with ${PROOFREADER_PAGE}`);
+         if(locationArray[locationArray.length-1]!== BOOKSGENERATOR_PAGE){
+         console.error(`Invalid URL: URL must end with ${BOOKSGENERATOR_PAGE}`);
             return;
         }
         const webComponentName = locationArray[locationArray.length - 1];
