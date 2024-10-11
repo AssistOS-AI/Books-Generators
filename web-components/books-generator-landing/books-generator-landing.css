@@ -1,0 +1,23 @@
+:root {
+    --background-color: #333;
+    --form-background: #CCC;
+    --text-color: #000;
+    --button-background: #000;
+    --button-text: #FFF;
+    --input-border: #888;
+}
+books-generator-landing{
+    height:100%;
+    width: 100%;
+    display: flex;
+}
+#books-generator-app-container{
+    width: calc(100% - 140px);
+}
+#right-sidebar-container{
+    width: 140px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(111.65deg, rgba(239, 239, 239, 0.6) 8.14%, rgba(239, 239, 239, 0.08) 95.69%);
+}

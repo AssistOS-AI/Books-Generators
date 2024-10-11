@@ -1,0 +1,13 @@
+books-generator-sidebar {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-feature {
+    display: flex;
+    background: var(--input-border);
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
