@@ -1,0 +1,57 @@
+{
+    "title": "$$bookTitle",
+    "subtitle": "$$subtitle",
+    "author": "$$author",
+    "genre": ["$$genre1", "$$genre2"],
+    "language": "$$language",
+    "description": "$$description",
+    "tags": ["$$tag1", "$$tag2", "$$tag3"],
+    "outline": [
+        {
+            "chapter_title": "$$chapterTitle1",
+            "chapter_summary": "$$chapterSummary1"
+        }
+        // Add more chapters as needed
+    ],
+    "keywords": ["$$keyword1", "$$keyword2"],
+    "writing_style": "$$writingStyle",  // e.g., Narrative, Expository, Conversational
+    "target_audience": "$$targetAudience",  // e.g., Children, Young Adults, Professionals
+    "tone": "$$tone",  // e.g., Formal, Informal, Humorous, Serious
+    "main_characters": [
+        {
+            "name": "$$characterName1",
+            "role": "$$characterRole1",
+            "description": "$$characterDescription1"
+        }
+        // Add more characters as needed
+    ],
+    "setting": {
+        "time_period": "$$timePeriod",  // e.g., Modern day, Medieval times
+        "location": "$$location",       // e.g., New York City, A fictional planet
+        "environment": "$$environment"  // e.g., Urban, Rural, Space station
+    },
+    "themes": ["$$theme1", "$$theme2"],  // e.g., Love, Betrayal, Redemption
+    "plot_points": [
+        "$$plotPoint1",
+        "$$plotPoint2"
+        // Add more plot points as needed
+    ],
+    "desired_length": "$$desiredLength",  // e.g., "Approximately 50,000 words"
+    "writing_prompts": ["$$prompt1", "$$prompt2"],  // Specific ideas or scenes to include
+    "content_guidelines": {
+        "include": ["$$include1", "$$include2"],  // Elements to definitely include
+        "avoid": ["$$avoid1", "$$avoid2"]         // Elements to avoid
+    },
+    "inspiration_sources": ["$$source1", "$$source2"],  // Books or authors to emulate
+    "educational_objectives": ["$$objective1", "$$objective2"],  // For non-fiction or educational content
+    "reading_level": "$$readingLevel",  // e.g., Grade 8, College level
+    "formatting_preferences": {
+        "chapters": "$$chapterFormat",  // e.g., "Each chapter starts with a quote"
+        "sections": "$$sectionFormat"   // e.g., "Use bullet points for lists"
+    },
+    "visual_elements": {
+        "include_images": "$$includeImages",  // e.g., Yes or No
+        "image_descriptions": ["$$imageDescription1", "$$imageDescription2"]
+    },
+    "additional_instructions": "$$additionalInstructions"
+}

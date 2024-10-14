@@ -1,0 +1,44 @@
+<div class="book-plan-page">
+    <div class="book-plan-header">
+        <h1>Create Book Plan</h1>
+        <button type="button" data-local-action="closeModal">X</button>
+    </div>
+    <div class="book-plan-content">
+        <form class="book-plan-form">
+            <div class="left-content">
+                <div class="form-item">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-input" type="text" id="title" name="title" placeholder="Title">
+                </div>
+                <div class="form-item">
+                    <label class="form-label" for="edition">Author</label>
+                    <input type="text" id="edition" name="edition" placeholder="Edition">
+                </div>
+                <div class="form-item">
+                    <label class="form-label" for="informative-text">Informative Text</label>
+                    <textarea id="informative-text" name="informative-text" placeholder="Informative Text on goal, production"></textarea>
+                </div>
+                <div class="form-item">
+                    <label class="form-label" for="prompt">Prompt</label>
+                    <textarea id="prompt" name="prompt" placeholder="Promp Generare Lista Capitole"></textarea>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="form-item">
+                    <label class="form-label" for="chapters">Nr Chapters</label>
+                    <select class="form-item" id="chapters" name="chapters">
+                        <option value="5">5</option>
+                        <option value="">Select Nr Chapters</option>
+                    </select>
+                </div>
+                <div class="form-item cover-upload">
+                    <label class="form-label" for="cover">Coperta (imagine, Upload, generate)</label>
+                    <input class="form-item" type="file" id="cover" name="cover">
+                </div>
+            </div>
+        </form>
+        <div class="modal-footer">
+            <button type="button" class="general-button" data-local-action="generateBook">generateBook</button>
+        </div>
+    </div>
+</div>

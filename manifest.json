@@ -25,6 +25,11 @@
             "name": "books-generator-templates-page",
             "presenterClassName": "BooksGeneratorTemplatesPage",
             "type": "pages"
+        },
+        {
+            "name": "books-generator-modal",
+            "presenterClassName": "BooksGeneratorModal",
+            "type": "modals"
         }
     ],
     "services": [
