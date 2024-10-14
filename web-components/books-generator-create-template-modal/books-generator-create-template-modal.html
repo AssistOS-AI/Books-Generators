@@ -1,0 +1,52 @@
+<div class="modal-header">
+    <div class="modal-title">Build Book Generation Template</div>
+    <button type="button" class="close" data-local-action="closeModal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form>
+        <div class="form-item">
+            <label class="form-label" for="name">Book Name</label>
+            <input type="text" class="form-input" name="name" data-id="name" id="name" required placeholder="Book Name">
+        </div>
+        <div class="form-item">
+            <label class="form-label" for="author">Author</label>
+            <input type="text" class="form-input" name="author" data-id="author" id="author" required value="$$user"
+                   placeholder="Name of the Author">
+        </div>
+        <div class="form-item">
+            <label class="form-label" for="edition">Edition</label>
+            <input type="number" class="form-input" name="edition" data-id="edition" id="edition" required min="1" max="100" value="1"
+                   placeholder="Book Edition">
+        </div>
+        <div class="form-item">
+            <label class="form-label" for="language">Language</label>
+            <select name="language" id="language">
+                $$languageOptions
+            </select>
+        </div>
+        <div class="form-item">
+            <label class="form-label" for="genres">Genre</label>
+            <select name="genres" id="genres">
+                $$genresOptions
+            </select>
+        </div>
+        <div class="form-item">
+            <label class="form-label" for="size">Number of Words</label>
+            <input type="number" class="form-input" name="size" data-id="size" id="size" min="1000" max="500000" value="50000" required
+                   placeholder="Total desired number of words">
+        </div>
+        <div class="form-item">
+            <label class="form-label" for="general-description">Book Description</label>
+            <textarea class="form-input" name="general-description" id="general-description"></textarea>
+        </div>
+        <div class="form-item">
+            <label class="form-label" for="generation-info">Special Generation Info</label>
+            <textarea class="form-input" name="generation-info" id="generation-info" placeholder="LLM Instructions"></textarea>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="general-button" data-local-action="generateTemplate">Generate Template</button>
+        </div>
+    </form>
+</div>
