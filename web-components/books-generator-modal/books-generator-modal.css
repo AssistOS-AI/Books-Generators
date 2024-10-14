@@ -5,7 +5,6 @@ dialog{
     min-width: 600px;
 }
 
-
 books-generator-modal {
     display: flex;
     flex-direction:column;
@@ -18,7 +17,6 @@ books-generator-modal {
     height:100%;
     width:100%;
 }
-
 
 .book-plan-header{
     display: flex;
