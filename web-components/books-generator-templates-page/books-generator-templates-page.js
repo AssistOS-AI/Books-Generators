@@ -12,4 +12,9 @@ export class BooksGeneratorTemplatesPage {
     async afterRender(){
 
     }
+    async openGenerateBookTemplateModal(_target){
+        await assistOS.UI.showModal("book-generator-template-modal",{
+            "presenter": "book-generator-template-modal",
+        });
+    }
 }

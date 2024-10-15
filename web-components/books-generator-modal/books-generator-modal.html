@@ -1,44 +1,38 @@
 <div class="book-plan-page">
     <div class="book-plan-header">
-        <h1>Create Book Plan</h1>
+        <h1>Create Book </h1>
         <button type="button" data-local-action="closeModal">X</button>
     </div>
     <div class="book-plan-content">
         <form class="book-plan-form">
+            <div class ="right-left-content">
             <div class="left-content">
                 <div class="form-item">
-                    <label class="form-label" for="title">Title</label>
-                    <input class="form-input" type="text" id="title" name="title" placeholder="Title">
-                </div>
-                <div class="form-item">
-                    <label class="form-label" for="edition">Author</label>
-                    <input type="text" id="edition" name="edition" placeholder="Edition">
-                </div>
-                <div class="form-item">
-                    <label class="form-label" for="informative-text">Informative Text</label>
-                    <textarea id="informative-text" name="informative-text" placeholder="Informative Text on goal, production"></textarea>
-                </div>
-                <div class="form-item">
-                    <label class="form-label" for="prompt">Prompt</label>
-                    <textarea id="prompt" name="prompt" placeholder="Promp Generare Lista Capitole"></textarea>
-                </div>
-            </div>
-            <div class="right-content">
-                <div class="form-item">
-                    <label class="form-label" for="chapters">Nr Chapters</label>
-                    <select class="form-item" id="chapters" name="chapters">
-                        <option value="5">5</option>
-                        <option value="">Select Nr Chapters</option>
+                    <label class="form-label" for="llm">Select LLM</label>
+                    <select class="form-item" id="llm" name="llm">
+                        <option value="">Select LLM</option>
+                        <option value="ChatGPT">ChatGPT</option>
                     </select>
                 </div>
-                <div class="form-item cover-upload">
-                    <label class="form-label" for="cover">Coperta (imagine, Upload, generate)</label>
-                    <input class="form-item" type="file" id="cover" name="cover">
+                <div class="form-item">
+                    <label class="form-label" for="size">Size</label>
+                    <input type="text" id="size" name="size" placeholder="Size">
                 </div>
+
             </div>
+            <div class="right-content">
+                <div class="form-item cover-upload">
+                    <label class="form-label" for="import">Import Template</label>
+                    <input class="form-item" type="file" id="import" name="import">
+                </div>
+
+
+            </div>
+            </div>
+
         </form>
         <div class="modal-footer">
-            <button type="button" class="general-button" data-local-action="generateBook">generateBook</button>
+            <button type="button" class="general-button" data-local-action="generateBook">Generate Book</button>
         </div>
     </div>
 </div>

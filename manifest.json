@@ -30,6 +30,11 @@
             "name": "books-generator-modal",
             "presenterClassName": "BooksGeneratorModal",
             "type": "modals"
+        },
+        {
+            "name": "book-generator-template-modal",
+            "presenterClassName": "BooksGeneratorTemplateModal",
+            "type": "modals"
         }
     ],
     "services": [

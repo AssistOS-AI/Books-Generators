@@ -1,10 +1,9 @@
 dialog{
-    height: 300px;
+    height: 650px;
     width: 600px;
-    min-height: 300px;
+    min-height: 600px;
     min-width: 600px;
 }
-
 
 /*books-generator-modal {*/
 /*    display: flex;*/
@@ -12,20 +11,20 @@ dialog{
 /*    height:400px;*/
 /*}*/
 
-.book-plan-page {
+.template-plan-page {
     padding: 20px;
     height:100%;
     width:100%;
 
 }
-.book-plan-header {
+.template-plan-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
 }
 
-.book-plan-header h1 {
+.template-plan-header h1 {
     margin: 0;
     flex-grow: 1;
     text-align: center;
@@ -35,13 +34,13 @@ dialog{
     color: var(--left-sidebar);
 
 }
-.book-plan-content
+.template-plan-content
 {
     display: flex;
     flex-direction: column;
 
 }
-.book-plan-form {
+.template-plan-form {
     display: flex;
     flex-direction: column;
 
@@ -102,9 +101,8 @@ textarea {
     font-size: 25px;
     align-self: center;
     margin-top: 120px;
-
-
 }
+
 .save-plan-button:hover {
     background-color: #555;
 }
