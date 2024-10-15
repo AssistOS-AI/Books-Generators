@@ -19,7 +19,6 @@ export class BooksGeneratorSidebar {
 
     }
     async changePage(_target, selectedPageName) {
-        debugger;
         RoutingService.navigateInternal(pageNames[selectedPageName], {});
     }
 }
