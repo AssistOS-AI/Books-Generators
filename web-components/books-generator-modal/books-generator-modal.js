@@ -1,35 +1,34 @@
-const llmModule=require("assistos").loadModule("llm", {});
-
-export class BooksGeneratorModal{
-    constructor(element, invalidate){
-        this.element=element;
+const llmModule = require("assistos").loadModule("llm", {});
+const documentModule= require("assistos").loadModule("document", {});
+export class BooksGeneratorModal {
+    constructor(element, invalidate) {
+        this.element = element;
         this.invalidate = invalidate;
+        this.documentId = this.element.getAttribute("data-documentid")
         this.invalidate();
-    }
-    async beforeRender(){}
-    async afterRender(){}
 
-    async closeModal(_target){
+    }
+
+    async beforeRender() {
+    }
+
+    async afterRender() {
+    }
+
+    async closeModal(_target) {
         await assistOS.UI.closeModal(_target);
     }
 
-    async generateBookTemplate(_target){
-        const formData = await assistOS.UI.extractFormInformation(_target);
-        if(!formData.isValid){
+    async generateBook(_target) {
+        const formElement=this.element.querySelector("form");
+        const formData = await assistOS.UI.extractFormInformation(formElement);
+        if (!formData.isValid) {
             return assistOS.UI.showApplicationError("Invalid form data", "Please fill all the required fields", "error");
         }
-        // const bookData = formData.data;
-        // const prompt =
-        //     `Generate a book with title ${bookData.title} edition ${bookData.edition}.
-        //      Details:
-        //      Number of chapters: ${bookData.chapters}. Special instructions: ${bookData.instructions}`;
-        //
-        // const reqData={
-        //     modelName: "GPT-4o",
-        //     prompt: prompt
-        // }
-        const llmResponse= await llmModule.sendLLMRequest(reqData);
-        const generatedBook=llmResponse.messages;
+        // only make the document type a book for now
+        await documentModule.updateDocumentType(assistOS.space.id, this.documentId, "book");
+        /* ... send the request to generate the book here ... */
+        await this.closeModal(_target);
     }
 
 }

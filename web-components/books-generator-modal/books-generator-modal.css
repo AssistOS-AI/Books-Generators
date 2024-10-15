@@ -53,11 +53,11 @@ dialog{
     line-height: 18px;
     letter-spacing: 0;
 }
-.right-left-content
+/*.right-left-content
 {
     display: flex;
     width: 100%;
-}
+}*/
 .left-content,
 .right-content {
     width: 48%;
