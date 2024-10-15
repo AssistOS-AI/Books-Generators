@@ -27,7 +27,7 @@ export class BooksGeneratorTemplateModal {
         const bookTitle = documentData.title;
         delete documentData.title;
         let docId = await documentModule.addDocument(assistOS.space.id, {
-            title: `book_template_${bookTitle}`,
+            title: `template_${bookTitle}`,
             commands: documentData,
         });
         assistOS.UI.closeModal(_target);

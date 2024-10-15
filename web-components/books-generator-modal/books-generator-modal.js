@@ -28,7 +28,7 @@ export class BooksGeneratorModal {
 
         // only make the document type a book for now
         const documentTitle=await documentModule.getDocumentTitle(assistOS.space.id, this.documentId);
-        const updatedDocumentTitle= `book_`+ documentTitle.split('book_template_')[1];
+        const updatedDocumentTitle= `book_`+ documentTitle.split('template_')[1];
         await documentModule.updateDocumentTitle(assistOS.space.id, this.documentId, updatedDocumentTitle);
 
         /* ... send the request to generate the book here ... */
