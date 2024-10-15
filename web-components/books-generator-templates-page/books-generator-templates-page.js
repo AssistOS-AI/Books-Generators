@@ -10,6 +10,9 @@ export class BooksGeneratorTemplatesPage {
             this.documents = this.documents.filter((document) => {
                 return document.title.startsWith("template_")
             }) || [];
+            this.documents.forEach((document) => {
+                document.title=document.title.split("_")[1];
+            });
         };
         this.invalidate = invalidate;
         this.id = "documents";
