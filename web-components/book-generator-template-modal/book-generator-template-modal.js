@@ -28,7 +28,7 @@ export class BooksGeneratorTemplateModal {
         delete documentData.title;
         let docId = await documentModule.addDocument(assistOS.space.id, {
             title: `template_${bookTitle}`,
-            commands: documentData,
+            abstract: JSON.stringify(documentData),
         });
         assistOS.UI.closeModal(_target);
         await assistOS.UI.changeToDynamicPage(`space-application-page`, `${assistOS.space.id}/Space/document-view-page/${docId}`);
