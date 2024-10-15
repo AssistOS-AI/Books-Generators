@@ -8,7 +8,7 @@ export class BooksGeneratorTemplatesPage {
             this.documents = await assistOS.space.getDocumentsMetadata(assistOS.space.id);
             //display only documents that are templates
             this.documents = this.documents.filter((document) => {
-                return document.type === "template";
+                return document.title.startsWith("book_template")
             }) || [];
         };
         this.invalidate = invalidate;

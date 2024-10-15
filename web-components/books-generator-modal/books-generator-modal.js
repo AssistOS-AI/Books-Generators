@@ -25,8 +25,12 @@ export class BooksGeneratorModal {
         if (!formData.isValid) {
             return assistOS.UI.showApplicationError("Invalid form data", "Please fill all the required fields", "error");
         }
+
         // only make the document type a book for now
-        await documentModule.updateDocumentType(assistOS.space.id, this.documentId, "book");
+        const documentTitle=await documentModule.getDocumentTitle(assistOS.space.id, this.documentId);
+        const updatedDocumentTitle= `book_`+ documentTitle.split('book_template_')[1];
+        await documentModule.updateDocumentTitle(assistOS.space.id, this.documentId, updatedDocumentTitle);
+
         /* ... send the request to generate the book here ... */
         await this.closeModal(_target);
     }

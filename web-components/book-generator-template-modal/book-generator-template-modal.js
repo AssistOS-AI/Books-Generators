@@ -1,4 +1,3 @@
-const llmModule = require("assistos").loadModule("llm", {});
 const documentModule = require("assistos").loadModule("document", {});
 
 export class BooksGeneratorTemplateModal {
@@ -28,9 +27,8 @@ export class BooksGeneratorTemplateModal {
         const bookTitle = documentData.title;
         delete documentData.title;
         let docId = await documentModule.addDocument(assistOS.space.id, {
-            title: bookTitle,
-            type: "template",
-            headers: documentData,
+            title: `book_template_${bookTitle}`,
+            commands: documentData,
         });
         assistOS.UI.closeModal(_target);
         await assistOS.UI.changeToDynamicPage(`space-application-page`, `${assistOS.space.id}/Space/document-view-page/${docId}`);

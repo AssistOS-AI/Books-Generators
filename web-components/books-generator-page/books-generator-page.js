@@ -8,7 +8,7 @@ export class BooksGeneratorPage {
             this.documents = await assistOS.space.getDocumentsMetadata(assistOS.space.id);
             //filter documents and display only books
             this.documents = this.documents.filter((document) => {
-                return document.type === "book";
+                return document.title.startsWith("book_");
             }) || [];
         };
         this.invalidate = invalidate;
