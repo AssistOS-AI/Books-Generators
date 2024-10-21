@@ -1,12 +1,10 @@
-const llmModule = require("assistos").loadModule("llm", {});
-const documentModule= require("assistos").loadModule("document", {});
-const booksModule = require("assistos").loadModule("books", {});
+const applicationModule = require('assistos').loadModule('application', {});
 
 export class BooksGeneratorModal {
     constructor(element, invalidate) {
         this.element = element;
         this.invalidate = invalidate;
-        this.documentId = this.element.getAttribute("data-documentid")
+        this.documentId = this.element.getAttribute("data-documentId")
         this.invalidate();
 
     }
@@ -22,19 +20,23 @@ export class BooksGeneratorModal {
     }
 
     async generateBook(_target) {
-        const formElement=this.element.querySelector("form");
-        const formData = await assistOS.UI.extractFormInformation(formElement);
-        if (!formData.isValid) {
-            return assistOS.UI.showApplicationError("Invalid form data", "Please fill all the required fields", "error");
-        }
-        // only make the document type a book for now
-        const {llm,size}=formData.data;
-        const documentTitle=await documentModule.getDocumentTitle(assistOS.space.id, this.documentId);
-        const updatedDocumentTitle= `book_`+ documentTitle.split('template_')[1];
-        await documentModule.updateDocumentTitle(assistOS.space.id, this.documentId, updatedDocumentTitle);
-        await booksModule.generateBook(assistOS.space.id, this.documentId, {llm,size});
-        /* ... send the request to generate the book here ... */
-        await this.closeModal(_target);
+        await assistOS.loadifyFunction(async () => {
+                const formElement = this.element.querySelector("form");
+                const formData = await assistOS.UI.extractFormInformation(formElement);
+                if (!formData.isValid) {
+                    return assistOS.UI.showApplicationError("Invalid form data", "Please fill all the required fields", "error");
+                }
+                const {llm, size} = formData.data;
+                const bookGenerationData = {
+                    llm,
+                    size,
+                    documentId: this.documentId
+                }
+                const documentId = (await applicationModule.runApplicationFlow(assistOS.space.id, "BooksGenerator", "GenerateBook", bookGenerationData)).data;
+                assistOS.UI.closeModal(_target);
+                await assistOS.UI.changeToDynamicPage(`space-application-page`, `${assistOS.space.id}/Space/document-view-page/${documentId}`);
+            }
+        )
     }
 
 }

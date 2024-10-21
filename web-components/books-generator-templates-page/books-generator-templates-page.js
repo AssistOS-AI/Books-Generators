@@ -61,4 +61,10 @@ export class BooksGeneratorTemplatesPage {
             "presenter": "book-generator-template-modal",
         });
     }
+    async generateBook(_target){
+        await assistOS.UI.showModal("books-generator-modal",{
+            "presenter": "books-generator-modal",
+            "documentId": this.getDocumentId(_target)
+        });
+    }
 }
