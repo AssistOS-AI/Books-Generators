@@ -2,7 +2,7 @@ import {RoutingService} from "./services/RoutingService.js";
 
 export class Manager {
     constructor() {
-        this.appName = "BooksGenerators";
+        this.appName = "BooksGenerator";
         this.services = new Map();
         this.services.set('RoutingService', new RoutingService());
     }
