@@ -11,19 +11,111 @@
 
                         <label class="form-label" for="title">Title</label>
                         <input class="form-input" type="text" id="title" name="title" placeholder="Title">
+
+                        <div class="form-item">
+                            <label class="form-label" for="personality">Select personality</label>
+                            <select class="form-item" id="personality" name="personality">
+                                <option value="">Select personality</option>
+                                <option value="Analyst">Analyst</option>
+                                <option value="Artist">Artist</option>
+                                <option value="Assistant">Assistant</option>
+                                <option value="Communicator">Communicator</option>
+                                <option value="Ethical Expert">Ethical Expert</option>
+                                <option value="Executor">Executor</option>
+                                <option value="Expert">Expert</option>
+                                <option value="Funny">Funny</option>
+                                <option value="Humanist">Humanist</option>
+                                <option value="Innovator">Innovator</option>
+                                <option value="Legal Expert">Legal Expert</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Quality Expert">Quality Expert</option>
+                                <option value="Reviewer">Reviewer</option>
+                                <option value="Scientist">Scientist</option>
+                                <option value="Spiritual">Spiritual</option>
+                                <option value="Strategist">Strategist</option>
+                                <option value="Traditionalist">Traditionalist</option>
+
+
+                            </select>
+                        </div>
                     </div>
                     <div class="form-item">
-                        <label class="form-label" for="edition">Edition</label>
-                        <input type="text" id="edition" name="edition" placeholder="Edition">
-                    </div>
-                   <!-- <div class="form-item">
-                        <label class="form-label" for="llm">Select LLM</label>
-                        <select class="form-item" id="llm" name="llm">
-                            <option value="">Select LLM</option>
-                            <option value="ChatGPT">ChatGPT</option>
-                        </select>
-                    </div>-->
+                        <label class="form-label" for="subject">Book Subject</label>
+                        <select class="form-item" id="subject" name="subject">
+                            <option value="">Select Book Topic</option>
+                            <option value="Fiction">Fiction</option>
+                            <option value="Non-Fiction">Non-Fiction</option>
+                            <option value="Science">Science</option>
+                            <option value="History">History</option>
+                            <option value="Biography & Memoir">Biography & Memoir</option>
+                            <option value="Self-Help & Personal Development">Self-Help & Personal Development</option>
+                            <option value="Health & Wellness">Health & Wellness</option>
+                            <option value="Business & Economics">Business & Economics</option>
+                            <option value="Technology & Innovation">Technology & Innovation</option>
+                            <option value="Philosophy">Philosophy</option>
+                            <option value="Psychology">Psychology</option>
+                            <option value="Travel & Adventure">Travel & Adventure</option>
+                            <option value="Arts & Culture">Arts & Culture</option>
+                            <option value="Cooking & Food">Cooking & Food</option>
+                            <option value="Education & Learning">Education & Learning</option>
+                            <option value="Spirituality & Religion">Spirituality & Religion</option>
+                            <option value="Mystery & Thriller">Mystery & Thriller</option>
+                            <option value="Fantasy & Science Fiction">Fantasy & Science Fiction</option>
+                            <option value="Children’s Books">Children’s Books</option>
+                            <option value="Young Adult">Young Adult</option>
 
+                        </select>
+                    </div>
+
+                    <div class="form-item">
+                        <label class="form-label" for="genre">Book Genre</label>
+                        <select class="form-item" id="genre" name="genre">
+                            <option value="">Select Book Genre</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Mystery">Mystery</option>
+                            <option value="Science Fiction">Science Fiction</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Historical Fiction">Historical Fiction</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Comedy">Comedy</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-item">
+                        <label class="form-label" for="style">Book Style</label>
+                        <select class="form-item" id="style" name="style">
+                            <option value="">Select Book Style</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Humorous">Humorous</option>
+                            <option value="Creative">Creative</option>
+                            <option value="Formal">Formal</option>
+                            <option value="Informal">Informal</option>
+                            <option value="Narrative">Narrative</option>
+                            <option value="Descriptive">Descriptive</option>
+                            <option value="Analytical">Analytical</option>
+                            <option value="Technical">Technical</option>
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label class="form-label" for="language">Language</label>
+                        <select class="form-item" id="language" name="language">
+                            <option value="">Select Language</option>
+                            <option value="English">English</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="French">French</option>
+                            <option value="German">German</option>
+                            <option value="Chinese">Chinese</option>
+                            <option value="Japanese">Japanese</option>
+                            <option value="Italian">Italian</option>
+                            <option value="Russian">Russian</option>
+                            <option value="Portuguese">Portuguese</option>
+                        </select>
+                    </div>
 
                 </div>
                 <div class="right-content">
@@ -31,21 +123,23 @@
                         <label class="form-label" for="chapters">Nr Chapters</label>
                         <input type="number" min="1" max="100" id="chapters" name="chapters" value="20">
                     </div>
-                    <div class="form-item cover-upload">
-                        <label class="form-label" for="cover">Coperta (imagine, Upload, generate)</label>
-                        <input class="form-item" type="file" id="cover" name="cover">
+                    <div class="form-item">
+                        <label class="form-label" for="number_ideea">Nr Ideea in Chapter</label>
+                        <input type="number" min="1" max="100" id="number_ideea" name="nr_ideea" value="20">
                     </div>
+                    <div class="form-item">
+                        <label class="form-label" for="bannedKeywords">Banned Keywords</label>
+                        <input type="text" id="bannedKeywords" name="bannedKeywords" placeholder="List banned keywords">
+                    </div>
+
                 </div>
             </div>
             <div class="bottom-content">
                 <div class="form-item">
-                    <label class="form-label" for="informativeText">Informative Text</label>
-                    <textarea id="informativeText" name="informativeText" placeholder="Informative Text on goal, production"></textarea>
+                    <label class="form-label" for="otherOption">Other Option</label>
+                    <textarea id="otherOption" name="otherOption" placeholder="Additional details or other options"></textarea>
                 </div>
-                <div class="form-item">
-                    <label class="form-label" for="prompt">Prompt</label>
-                    <textarea id="prompt" name="prompt" placeholder="Promp Generare Lista Capitole"></textarea>
-                </div>
+
             </div>
         </form>
         <div class="modal-footer">
