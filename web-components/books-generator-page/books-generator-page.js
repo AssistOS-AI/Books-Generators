@@ -1,6 +1,5 @@
 const documentModule = require("assistos").loadModule("document", {});
-const utilModule = require("assistos").loadModule("util", {});
-
+import {NotificationRouter} from "../../../../../../../apihub-root/wallet/imports.js"
 export class BooksGeneratorPage {
     constructor(element, invalidate) {
         this.notificationId = "docs";
@@ -18,12 +17,13 @@ export class BooksGeneratorPage {
         this.id = "documents";
         this.invalidate(async () => {
             await this.refreshDocuments();
-            await utilModule.subscribeToObject(this.id, (data) => {
-                this.invalidate(this.refreshDocuments);
-            });
+            this.boundOnListUpdate = this.onListUpdate.bind(this);
+            await NotificationRouter.subscribeToSpace(assistOS.space.id, this.id, this.boundOnListUpdate);
         });
     }
-
+    onListUpdate(){
+        this.invalidate(this.refreshDocuments);
+    }
     async beforeRender() {
         this.tableRows = "";
         this.documents.forEach((document) => {
