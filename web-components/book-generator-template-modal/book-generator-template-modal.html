@@ -5,12 +5,13 @@
     </div>
     <div class="template-plan-content">
         <form class="template-plan-form">
+            <div class="top-content>">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-input" type="text" id="title" name="title" placeholder="Title">
+            </div>
             <div class ="right-left-content">
                 <div class="left-content">
                     <div class="form-item">
-
-                        <label class="form-label" for="title">Title</label>
-                        <input class="form-input" type="text" id="title" name="title" placeholder="Title">
 
                         <div class="form-item">
                             <label class="form-label" for="personality">Select personality</label>
@@ -86,6 +87,18 @@
 
                     </div>
 
+
+                </div>
+                <div class="right-content">
+                    <div class="form-item">
+                        <label class="form-label" for="chapters">Nr Chapters</label>
+                        <input type="number" min="1" max="100" id="chapters" name="chapters" value="20">
+                    </div>
+                    <div class="form-item">
+                        <label class="form-label" for="number_ideea">Nr Ideea in Chapter</label>
+                        <input type="number" min="1" max="100" id="number_ideea" name="nr_ideea" value="20">
+                    </div>
+
                     <div class="form-item">
                         <label class="form-label" for="style">Book Style</label>
                         <select class="form-item" id="style" name="style">
@@ -117,24 +130,14 @@
                         </select>
                     </div>
 
-                </div>
-                <div class="right-content">
-                    <div class="form-item">
-                        <label class="form-label" for="chapters">Nr Chapters</label>
-                        <input type="number" min="1" max="100" id="chapters" name="chapters" value="20">
-                    </div>
-                    <div class="form-item">
-                        <label class="form-label" for="number_ideea">Nr Ideea in Chapter</label>
-                        <input type="number" min="1" max="100" id="number_ideea" name="nr_ideea" value="20">
-                    </div>
-                    <div class="form-item">
-                        <label class="form-label" for="bannedKeywords">Banned Keywords</label>
-                        <input type="text" id="bannedKeywords" name="bannedKeywords" placeholder="List banned keywords">
-                    </div>
 
                 </div>
             </div>
             <div class="bottom-content">
+                <div class="form-item">
+                    <label class="form-label" for="bannedKeywords">Banned Keywords</label>
+                    <input type="text" id="bannedKeywords" name="bannedKeywords" placeholder="List banned keywords">
+                </div>
                 <div class="form-item">
                     <label class="form-label" for="otherOption">Other Option</label>
                     <textarea id="otherOption" name="otherOption" placeholder="Additional details or other options"></textarea>
@@ -144,6 +147,8 @@
         </form>
         <div class="modal-footer">
             <button type="button" class="general-button" data-local-action="generateBookTemplate">Generate Book Plan</button>
-        </div>
+            <button type="button" class="general-button" data-local-action="PreviewBookTemplateModal">Preview</button>
+
+            </div>
     </div>
 </div>

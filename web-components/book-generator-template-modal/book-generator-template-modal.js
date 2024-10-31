@@ -31,4 +31,9 @@ export class BooksGeneratorTemplateModal {
             }
         )
     }
+    async PreviewBookTemplateModal(_target) {
+        await assistOS.UI.showModal("book-generator-template-preview", {
+            "presenter": "book-generator-template-preview",
+        });
+    }
 }
