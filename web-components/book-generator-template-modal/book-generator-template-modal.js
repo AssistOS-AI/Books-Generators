@@ -14,11 +14,14 @@ export class BooksGeneratorTemplateModal {
         this.personalityOptions = personalities.map(personality => {
             return `<option value="${personality.id}">${personality.name}</option>`;
         })
+
         /* TODO mechanism to download multiple prompts at the same time without knowing the name of the files from an application folder
-           the whole application system is weird, as requereing directily at this level doesn't work. why would an application need an endpoint
-           to access its own files rather than solving the require issue?
+           Why would an application need an endpoint to access its own files rather than solving the require issue and let the application
+           handle its dependencies internally?
          */
+
         this.bookSchema = JSON.parse(JSON.parse(await applicationModule.getApplicationFile(assistOS.space.id, "BooksGenerator", "templates/Prompts/bookSchema.json")));
+        this.bookSchemSinica = JSON.parse(JSON.parse(await applicationModule.getApplicationFile(assistOS.space.id, "BooksGenerator", "templates/Prompts/promptGenereareBookSinica.json")));
 
         this.templateData = JSON.parse(JSON.parse(await applicationModule.getApplicationFile(assistOS.space.id, "BooksGenerator", "data/templateData.json")));
 
@@ -49,17 +52,14 @@ export class BooksGeneratorTemplateModal {
         this.themes = this.templateData.themes.map(theme => {
             return `<option value="${theme}">${theme}</option>`;
         });
-        this.prompts = `<option value="bookSchema">Book Schema</option>`;
+        this.prompts =
+            `<option value="bookSchema">Book Schema</option>` +
+            `<option value="promptGenerareBookSinica">Prompt Generare Book Sinica</option>`;
     }
 
-    renderPrompt(schemaData) {
-        this.reviewPrompt = Object.keys(schemaData)
-            .map(key => {
-                if (!isNaN(parseInt(key))) {
-                    return schemaData[key]
-                }
-            })
-            .join("\n");
+    async afterRender() {
+        await this.updateReviewPrompt()
+        this.addEventListeners();
     }
 
     addEventListeners() {
@@ -72,7 +72,7 @@ export class BooksGeneratorTemplateModal {
     async updateReviewPrompt() {
         const formElement = this.element.querySelector("form");
         const formData = await assistOS.UI.extractFormInformation(formElement);
-
+        // get Personality text, in loc de formDAta.data.personality
         const bookData = {
             title: formData.data.title || '',
             personality: formData.data.personality || '',
@@ -100,9 +100,14 @@ export class BooksGeneratorTemplateModal {
         this.element.querySelector("#review-prompt").value = this.reviewPrompt;
     }
 
-    async afterRender() {
-        await this.updateReviewPrompt()
-        this.addEventListeners();
+    renderPrompt(schemaData) {
+        this.reviewPrompt = Object.keys(schemaData)
+            .map(key => {
+                if (!isNaN(parseInt(key))) {
+                    return schemaData[key]
+                }
+            })
+            .join("\n");
     }
 
     async closeModal(_target) {
