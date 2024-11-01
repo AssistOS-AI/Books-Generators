@@ -1,0 +1,50 @@
+{
+    "genres": [
+        "Romance", "Thriller", "Mystery", "Science Fiction", "Fantasy", "Horror",
+        "Historical Fiction", "Drama", "Adventure", "Comedy", "Self-Help",
+        "Biography", "Memoir", "Young Adult", "Children", "Education", "Travel",
+        "Non-Fiction", "Health & Wellness", "Philosophy", "Psychology"
+    ],
+    "tones": [
+        "Formal", "Informal", "Humorous", "Serious", "Inspirational", "Dark",
+        "Lighthearted", "Suspenseful", "Thought-provoking", "Empowering", "Reflective",
+        "Romantic", "Gritty", "Heartwarming"
+    ],
+    "subjects": [
+        "Fiction", "Non-Fiction", "Science", "History", "Biography & Memoir",
+        "Self-Help & Personal Development", "Health & Wellness", "Business & Economics",
+        "Technology & Innovation", "Philosophy", "Psychology", "Travel & Adventure",
+        "Arts & Culture", "Cooking & Food", "Education & Learning",
+        "Spirituality & Religion", "Mystery & Thriller", "Fantasy & Science Fiction",
+        "Children’s Books", "Young Adult"
+    ],
+    "writingStyles": [
+        "Academic", "Humorous", "Creative", "Formal", "Informal", "Narrative",
+        "Descriptive", "Analytical", "Technical", "Conversational", "Storytelling",
+        "Expository", "Inspirational", "Instructive", "Poetic", "Journalistic"
+    ],
+    "languages": [
+        "English", "Spanish", "French", "German", "Chinese", "Japanese", "Italian",
+        "Russian", "Portuguese", "Arabic", "Korean", "Hindi"
+    ],
+    "targetAudiences": [
+        "Children", "Young Adults", "Adults", "Professionals", "Educators", "Families",
+        "Science Enthusiasts", "History Buffs", "Travelers", "Mystery Lovers",
+        "Fantasy Fans"
+    ],
+    "timePeriods": [
+        "Modern day", "Medieval times", "Future", "Ancient history", "Victorian Era",
+        "Renaissance", "1920s", "Stone Age", "Post-apocalyptic", "Cyberpunk future"
+    ],
+    "environments": [
+        "Urban", "Rural", "Space station", "Underwater world", "Desert", "Forest",
+        "Mountains", "Tropical island", "Alien planet", "Virtual reality", "Small town",
+        "Haunted house", "Dystopian city", "Medieval kingdom"
+    ],
+    "themes": [
+        "Love", "Betrayal", "Redemption", "Courage", "Friendship", "Self-discovery",
+        "Survival", "Adventure", "Revenge", "Justice", "Sacrifice", "Freedom",
+        "Resilience", "Power and Corruption", "Good vs Evil", "Overcoming Adversity",
+        "Identity", "Loss", "Forgiveness", "Humanity and Technology"
+    ]
+}

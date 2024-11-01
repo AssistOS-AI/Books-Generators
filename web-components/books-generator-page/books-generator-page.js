@@ -1,5 +1,5 @@
-const documentModule = require("assistos").loadModule("document", {});
-import {NotificationRouter} from "../../../../../../../apihub-root/wallet/imports.js"
+//const documentModule = require("assistos").loadModule("document", {});
+//import {NotificationRouter} from "../../../../../../../apihub-root/wallet/imports.js"
 export class BooksGeneratorPage {
     constructor(element, invalidate) {
         this.notificationId = "docs";
@@ -18,7 +18,7 @@ export class BooksGeneratorPage {
         this.invalidate(async () => {
             await this.refreshDocuments();
             this.boundOnListUpdate = this.onListUpdate.bind(this);
-            await NotificationRouter.subscribeToSpace(assistOS.space.id, this.id, this.boundOnListUpdate);
+            //await NotificationRouter.subscribeToSpace(assistOS.space.id, this.id, this.boundOnListUpdate);
         });
     }
     onListUpdate(){
