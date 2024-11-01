@@ -1,8 +1,8 @@
 dialog{
-    height: 730px;
-    width: 600px;
-    min-height: 600px;
-    min-width: 600px;
+    height: 1300px;
+    width: 1600px;
+    min-height: 1300px;
+    min-width: 1600px;
 }
 
 /*books-generator-modal {*/
@@ -17,11 +17,13 @@ dialog{
     width:100%;
 
 }
+input[type="number"]{
+    border-radius: 8px;
+}
 .template-plan-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
 }
 
 .template-plan-header h1 {
@@ -70,7 +72,7 @@ dialog{
 
 }
 .form-item {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     width: 100%;
 }
 input[type="text"], textarea, select {
@@ -86,7 +88,10 @@ textarea {
     resize: none;
     height: 100px;
 }
-
+#review-prompt{
+    height:400px;
+    margin-bottom:20px;
+}
 .cover-upload {
     margin-top: 20px;
 }
