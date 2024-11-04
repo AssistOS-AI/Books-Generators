@@ -1,91 +1,82 @@
 <div class="template-plan-page">
     <div class="template-plan-header">
         <h1>Create Book Plan</h1>
-        <button type="button" data-local-action="closeModal">X</button>
+        <button type="button" data-local-action="closeModal" class="close-modal">X</button>
     </div>
     <div class="template-plan-content">
         <form class="template-plan-form">
             <div class="right-left-content">
                 <div class="left-content">
-                    <div class="top-content>">
-                    </div>
                     <div class="form-item">
                         <label class="form-label" for="title">Title</label>
                         <input class="form-input" type="text" id="title" name="title" placeholder="Title">
                     </div>
                     <div class="form-item">
-
-                        <div class="form-item">
-                            <label class="form-label" for="personality">Select personality</label>
-                            <select class="form-item" id="personality" name="personality">
-                                $$personalityOptions
-                            </select>
-                        </div>
+                        <label class="form-label" for="personality">Select Personality</label>
+                        <select class="form-input" id="personality" name="personality">
+                            $$personalityOptions
+                        </select>
                     </div>
                     <div class="form-item">
                         <label class="form-label" for="subject">Book Subject</label>
-                        <select class="form-item" id="subject" name="subject">
+                        <select class="form-input" id="subject" name="subject">
                             $$subjects
                         </select>
                     </div>
-
                     <div class="form-item">
                         <label class="form-label" for="genre">Book Genre</label>
-                        <select class="form-item" id="genre" name="genre">
+                        <select class="form-input" id="genre" name="genre">
                             $$genres
                         </select>
                     </div>
                     <div class="form-item">
                         <label class="form-label" for="tone">Book Tone</label>
-                        <select class="form-item" id="tone" name="tone">
+                        <select class="form-input" id="tone" name="tone">
                             $$tones
                         </select>
                     </div>
-
                 </div>
+
                 <div class="right-content">
                     <div class="form-item">
-                        <label class="form-label" for="chapters">Nr Chapters</label>
+                        <label class="form-label" for="chapters">Nr. Chapters</label>
                         <input type="number" min="1" max="100" id="chapters" name="chapters" value="20">
                     </div>
                     <div class="form-item">
-                        <label class="form-label" for="number_ideea">Ideas in each Chapter</label>
-                        <input type="number" min="1" max="100" id="number_ideea" name="nr_ideea" value="20">
+                        <label class="form-label" for="ParagraphsPerChapter">Ideas per Chapter</label>
+                        <input type="number" min="1" max="100" id="ParagraphsPerChapter" name="ParagraphsPerChapter" value="20">
                     </div>
-
                     <div class="form-item">
                         <label class="form-label" for="style">Book Style</label>
-                        <select class="form-item" id="style" name="style">
+                        <select class="form-input" id="style" name="style">
                             $$writingStyles
                         </select>
                     </div>
                     <div class="form-item">
                         <label class="form-label" for="language">Language</label>
-                        <select class="form-item" id="language" name="language">
+                        <select class="form-input" id="language" name="language">
                             $$languages
                         </select>
                     </div>
                     <div class="form-item">
                         <label class="form-label" for="targetAudience">Target Audience</label>
-                        <select class="form-item" id="targetAudience" name="targetAudience">
+                        <select class="form-input" id="targetAudience" name="targetAudience">
                             $$targetAudiences
                         </select>
                     </div>
                     <div class="form-item">
                         <label class="form-label" for="environments">Environments</label>
-                        <select class="form-item" id="environments" name="environments">
+                        <select class="form-input" id="environments" name="environments">
                             $$environments
                         </select>
                     </div>
-
-
                 </div>
             </div>
+
             <div class="bottom-content">
                 <div class="form-item">
                     <label class="form-label" for="bannedKeywords">Banned Keywords</label>
-                    <input type="text" id="bannedKeywords" name="bannedKeywords"
-                           placeholder="List banned keywords separated by ,">
+                    <input type="text" id="bannedKeywords" name="bannedKeywords" placeholder="List banned keywords separated by commas">
                 </div>
                 <div class="form-item">
                     <label class="form-label" for="bannedConcepts">Banned Concepts</label>
@@ -96,23 +87,25 @@
                     <input type="text" id="otherOption" name="otherOption" placeholder="Additional details">
                 </div>
                 <div class="form-item">
-                    <label class="form-label" for="prompt">Select Prompt</label>
-                    <select class="form-item" id="prompt" name="prompt">
+                    <label class="form-label" for="promptTemplate">Select Prompt</label>
+                    <select class="form-input" id="promptTemplate" name="promptTemplate">
                         $$prompts
                     </select>
                 </div>
-
-
+                <div class="form-item">
+                    <label class="form-label" for="review-prompt">Generation Prompt</label>
+                    <textarea id="review-prompt" name="review-prompt">$$reviewPrompt</textarea>
+                    <div class="prompt-menu-actions">
+                        <button type="button" class="prompt-menu" data-local-action="proofreadPrompt">Proofread Prompt</button>
+                        <button type="button" class="prompt-menu" data-local-action="hideJson">Hide JSON</button>
+                        <button type="button" class="prompt-menu" data-local-action="expandJson">Expand JSON</button>
+                        <button type="button" class="prompt-menu" data-local-action="minimizeJson">Minimize JSON</button>
+                    </div>
+                </div>
             </div>
         </form>
-        <label class="review-prompt" for="review-prompt">Generation Prompt</label>
-        <textarea id="review-prompt">$$reviewPrompt</textarea>
-
-
         <div class="modal-footer">
-            <button type="button" class="general-button" data-local-action="generateBookTemplate">Generate Book Plan
-            </button>
-            <!--<button type="button" class="general-button" data-local-action="PreviewBookTemplateModal">Preview</button>-->
+            <button type="button" class="general-button" data-local-action="generateBookTemplate">Generate Book Plan</button>
         </div>
     </div>
 </div>

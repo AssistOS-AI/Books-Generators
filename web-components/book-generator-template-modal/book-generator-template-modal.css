@@ -1,81 +1,71 @@
-dialog{
-    height: 1300px;
-    width: 1600px;
-    min-height: 1300px;
-    min-width: 1600px;
+dialog {
+    height: 1320px;
+    width: 1000px;
+    min-height: 1320px;
+    min-width: 1000px;
+    padding: 15px;
 }
-
-/*books-generator-modal {*/
-/*    display: flex;*/
-/*    flex-direction:column;*/
-/*    height:400px;*/
-/*}*/
 
 .template-plan-page {
-    padding: 20px;
-    height:100%;
-    width:100%;
+    padding: 15px;
+    width: 100%;
+}
 
-}
-input[type="number"]{
-    border-radius: 8px;
-}
 .template-plan-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .template-plan-header h1 {
-    margin: 0;
-    flex-grow: 1;
-    text-align: center;
-    font-size: 26px;
-    font-weight: 600;
-    line-height: 42px;
+    font-size: 28px;
+    font-weight: 700;
     color: var(--left-sidebar);
-
+    margin: 0;
 }
-.template-plan-content
-{
+
+.template-plan-header .close-modal {
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.template-plan-content {
     display: flex;
     flex-direction: column;
-
 }
+
 .template-plan-form {
     display: flex;
     flex-direction: column;
+}
 
-}
-.form-input:focus {
-    color: var(--gray-black);
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 18px;
-    letter-spacing: 0;
-}
-.right-left-content
-{
+.right-left-content {
     display: flex;
+    justify-content: space-between;
     width: 100%;
 }
-.left-content,
-.right-content {
+
+.left-content, .right-content {
     width: 48%;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
-.right-content
-{
-    margin-left: 20px;
 
-}
 .form-item {
-    margin-bottom: 8px;
-    width: 100%;
+    margin-bottom: 15px;
 }
-input[type="text"], textarea, select {
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-input, input[type="text"], textarea, select {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--input-border);
@@ -86,37 +76,94 @@ input[type="text"], textarea, select {
 
 textarea {
     resize: none;
-    height: 100px;
-}
-#review-prompt{
-    height:400px;
-    margin-bottom:20px;
-}
-.cover-upload {
-    margin-top: 20px;
+    height: 120px;
+    margin-bottom: 10px;
 }
 
-.save-plan-button {
-    background-color: var(--button-background);
-    color: var(--button-text);
-    padding: 20px;
-    border: none;
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--input-border);
     border-radius: 8px;
+}
+
+#review-prompt {
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.prompt-menu-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.prompt-menu {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid var(--input-border);
+    background-color: #f7f7f7;
     cursor: pointer;
-    font-size: 25px;
-    align-self: center;
-    margin-top: 120px;
 }
 
-.save-plan-button:hover {
-    background-color: #555;
+.prompt-menu:hover {
+    background-color: #e0e0e0;
 }
 
-#subject {
-    margin-top:12px;
-}
 .modal-footer {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    padding-top: 20px;
+}
+
+.general-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.general-button:hover {
+    background-color: #555;
+}
+.custom-menu {
+    background-color: #ffffff;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: 10px;
+    width: 400px; /* Adjust width as needed */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between menu items */
+}
+
+.custom-menu button {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f7f7f7;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.custom-menu button:hover {
+    background-color: #e0e0e0;
+}
+
+.custom-menu button:active {
+    background-color: #ccc;
+}
+
+.custom-menu button:focus {
+    outline: none;
+    border-color: var(--button-background);
 }
