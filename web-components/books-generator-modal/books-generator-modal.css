@@ -1,5 +1,5 @@
 dialog{
-    height: 300px;
+    height: 550px;
     width: 600px;
     min-height: 300px;
     min-width: 600px;
@@ -53,11 +53,15 @@ dialog{
     line-height: 18px;
     letter-spacing: 0;
 }
-/*.right-left-content
+.right-left-content
 {
     display: flex;
     width: 100%;
-}*/
+}
+#review-prompt{
+    height:200px;
+    margin-bottom:20px;
+}
 .left-content,
 .right-content {
     width: 48%;
