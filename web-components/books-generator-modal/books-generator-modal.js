@@ -11,6 +11,10 @@ export class BooksGeneratorModal {
 
     async beforeRender() {
         this.generateBookSchema = JSON.parse(JSON.parse(await applicationModule.getApplicationFile(assistOS.space.id, "BooksGenerator", "templates/Prompts/generateBooksSchema.json")));
+        this.generateBookSchema1 = JSON.parse(JSON.parse(await applicationModule.getApplicationFile(assistOS.space.id, "BooksGenerator", "templates/Prompts/generateBooksSchemaAnother.json")));
+        this.prompts =
+            `<option value="generateBookSchema">Book Schema</option>` +
+            `<option value="generateBookSchema1">Basic Template</option>` ;
     }
 
     async afterRender() {
@@ -23,6 +27,10 @@ export class BooksGeneratorModal {
         inputs.forEach(input => {
             input.addEventListener('change', () => this.updateReviewPrompt());
         });
+        const promptSelector = this.element.querySelector("#promptTemplate");
+        if (promptSelector) {
+            promptSelector.addEventListener('change', () => this.updateReviewPrompt());
+        }
     }
 
     async updateReviewPrompt() {
@@ -41,20 +49,31 @@ export class BooksGeneratorModal {
             bookData
         };
 
-        let filledJSONTemplate = utilModule.fillTemplate(this.generateBookSchema, updatedTemplateData);
 
-        this.renderPrompt(filledJSONTemplate);
-        this.element.querySelector("#review-prompt").value = this.reviewPrompt;
+        const templates = {
+            generateBookSchema:  this.generateBookSchema,
+            generateBookSchema1:  this.generateBookSchema1
+
+        };
+
+        const selectedPrompt = this.element.querySelector("#promptTemplate").value;
+        const selectedTemplate = templates[selectedPrompt];
+
+        if (selectedTemplate) {
+            const filledJSONTemplate = utilModule.fillTemplate(selectedTemplate, updatedTemplateData);
+            const reviewPrompt = this.renderPrompt(filledJSONTemplate);
+            this.element.querySelector("#review-prompt").value = reviewPrompt;
+        }
     }
 
    renderPrompt(schemaData) {
-       this.reviewPrompt = Object.keys(schemaData)
-            .map(key => {
-                if (!isNaN(parseInt(key))) {
-                    return schemaData[key]
-                }
-            })
-            .join(".\n");
+       return Object.keys(schemaData)
+           .map(key => {
+               if (!isNaN(parseInt(key))) {
+                   return schemaData[key];
+               }
+           })
+           .join("\n");
     }
 
 

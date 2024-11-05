@@ -112,3 +112,7 @@ textarea {
 .save-plan-button:hover {
     background-color: #555;
 }
+#edition {
+    margin-top: 10px;
+}
+
