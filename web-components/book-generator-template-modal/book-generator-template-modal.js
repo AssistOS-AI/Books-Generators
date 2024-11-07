@@ -68,7 +68,6 @@ export class BooksGeneratorTemplateModal {
             <option value="transformativeJourneyTemplate">Transformative Journey Template</option>
         `;
     }
-
     async afterRender() {
         await this.loadSelectedTemplate();
         this.addEventListeners();
@@ -177,6 +176,7 @@ export class BooksGeneratorTemplateModal {
 
     async loadSelectedTemplate() {
         const selectedPrompt = this.element.querySelector("#promptTemplate").value;
+        console.log(selectedPrompt);
         const templates = {
             bookSchema: this.bookSchema,
             basicTemplate: this.basicTemplate,
@@ -214,6 +214,7 @@ export class BooksGeneratorTemplateModal {
             })
             .join("\n");
     }
+
 
     async closeModal(_target) {
         await assistOS.UI.closeModal(_target);
