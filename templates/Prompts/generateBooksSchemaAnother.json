@@ -1,4 +1,4 @@
 {  "name": "Generate Book Schema Default",
-  "0": "Your purpose is to generate a book schema template based on user specifications which will be used to create a book. Your response should match this json schema:\n    chapters: [\n                    {\n                        title: \"String\",\n                        idea: \"String\",\n                    }\n                ]\n. Under no circumstance should your response include any other information than the json response schema. Please give me a JSON response without including any code blocks or the JSON syntax.",
+  "0": "Your task is to create a book schema based on the given template. Additionally, elaborate on each idea in the template to build out detailed content for each section.",
   "3": "Book data: $$bookData"
 }
