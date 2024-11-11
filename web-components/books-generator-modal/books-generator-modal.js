@@ -1,5 +1,7 @@
 const applicationModule = require('assistos').loadModule('application', {});
 const utilModule = require('assistos').loadModule('util', {});
+const personalityModule = require('assistos').loadModule('personality', {});
+
 
 export class BooksGeneratorModal {
     constructor(element, invalidate) {
@@ -10,6 +12,12 @@ export class BooksGeneratorModal {
     }
 
     async beforeRender() {
+        const personalities = await personalityModule.getPersonalitiesMetadata(assistOS.space.id);
+        this.personalities = personalities;
+        this.personalityOptions = personalities.map(personality => {
+            return `<option value="${personality.id}">${personality.name}</option>`;
+        });
+
         this.generateBookSchema = JSON.parse(JSON.parse(await applicationModule.getApplicationFile(assistOS.space.id, "BooksGenerator", "templates/Prompts/generateBooksSchema.json")));
         this.generateBookSchema1 = JSON.parse(JSON.parse(await applicationModule.getApplicationFile(assistOS.space.id, "BooksGenerator", "templates/Prompts/generateBooksSchemaAnother.json")));
         this.prompts =
