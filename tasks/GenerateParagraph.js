@@ -10,7 +10,7 @@ class GenerateParagraph extends Task {
     async runTask() {
         const llmModule = require('assistos').loadModule('llm', this.securityContext);
         const openAIPrompt = `Please provide the paragraph content for the paragraph titled ${this.configs.title}`;
-        const llmResponse= await llmModule.sendLLMRequest({prompt: openAIPrompt});
+        const llmResponse= await llmModule.generateText({prompt: openAIPrompt});
     }
 
     async cancelTask() {
