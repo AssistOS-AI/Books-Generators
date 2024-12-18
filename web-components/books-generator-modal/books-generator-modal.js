@@ -106,11 +106,8 @@ export class BooksGeneratorModal {
                 size,
                 documentId: this.documentId
             };
-
-            const documentId = (await applicationModule.runApplicationFlow(assistOS.space.id, "BooksGenerator", "GenerateBook", bookGenerationData)).data;
-            assistOS.UI.closeModal(_target);
-                assistOS.UI.closeModal(_target);
-                await assistOS.UI.changeToDynamicPage(`space-application-page`, `${assistOS.space.id}/Space/document-view-page/${documentId}`);
+            const taskId = await applicationModule.runApplicationTask(assistOS.space.id, "BooksGenerator", "GenerateBook", bookGenerationData);
+            assistOS.UI.closeModal(_target,taskId);
             }
         )
     }

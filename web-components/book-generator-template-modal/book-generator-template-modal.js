@@ -228,9 +228,8 @@ export class BooksGeneratorTemplateModal {
                 return assistOS.UI.showApplicationError("Invalid form data", "Please fill all the required fields", "error");
             }
             const documentData = formData.data;
-            const documentId = (await applicationModule.runApplicationFlow(assistOS.space.id, "BooksGenerator", "GenerateTemplate", documentData)).data;
-            assistOS.UI.closeModal(_target);
-            await assistOS.UI.changeToDynamicPage(`space-application-page`, `${assistOS.space.id}/Space/document-view-page/${documentId}`);
+            const taskId = await applicationModule.runApplicationTask(assistOS.space.id, "BooksGenerator", "GenerateTemplate", documentData)
+            assistOS.UI.closeModal(_target,taskId);
         });
     }
 

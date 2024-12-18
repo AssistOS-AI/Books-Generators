@@ -1,4 +1,3 @@
-
 export class BooksGeneratorTemplatesPage {
     constructor(element, invalidate) {
         this.notificationId = "docs";
@@ -9,7 +8,7 @@ export class BooksGeneratorTemplatesPage {
                 return document.title.startsWith("template_")
             }) || [];
             this.documents.forEach((document) => {
-                document.title=document.title.split("_")[1];
+                document.title = document.title.split("_")[1];
             });
         };
         this.invalidate = invalidate;
@@ -19,9 +18,11 @@ export class BooksGeneratorTemplatesPage {
             this.boundsOnListUpdate = this.onListUpdate.bind(this);
         });
     }
-    onListUpdate(){
+
+    onListUpdate() {
         this.invalidate(this.refreshDocuments);
     }
+
     async beforeRender() {
         this.tableRows = "";
         this.documents.forEach((document) => {
@@ -39,9 +40,11 @@ export class BooksGeneratorTemplatesPage {
             this.tableRows = `<div> There are no Book Templates yet </div>`;
         }
     }
-    async afterRender(){
+
+    async afterRender() {
 
     }
+
     async editAction(_target) {
         let documentId = this.getDocumentId(_target);
         await assistOS.UI.changeToDynamicPage("space-application-page", `${assistOS.space.id}/Space/document-view-page/${documentId}`);
@@ -54,13 +57,18 @@ export class BooksGeneratorTemplatesPage {
     async showActionBox(_target, primaryKey, componentName, insertionMode) {
         await assistOS.UI.showActionBox(_target, primaryKey, componentName, insertionMode);
     }
-    async openGenerateBookTemplateModal(_target){
-        await assistOS.UI.showModal("book-generator-template-modal",{
+
+    async openGenerateBookTemplateModal(_target) {
+        const taskId = await assistOS.UI.showModal("book-generator-template-modal", {
             "presenter": "book-generator-template-modal",
-        });
+        }, true);
+        if (taskId) {
+            assistOS.watchTask(taskId);
+        }
     }
-    async generateBook(_target){
-        await assistOS.UI.showModal("books-generator-modal",{
+
+    async generateBook(_target) {
+        await assistOS.UI.showModal("books-generator-modal", {
             "presenter": "books-generator-modal",
             "documentId": this.getDocumentId(_target)
         });
