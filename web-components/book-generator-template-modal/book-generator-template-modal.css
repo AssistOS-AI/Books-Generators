@@ -1,7 +1,7 @@
 dialog {
-    height: 1320px;
+    height: 100%;
+    overflow: auto;
     width: 1000px;
-    min-height: 1320px;
     min-width: 1000px;
     padding: 15px;
 }
