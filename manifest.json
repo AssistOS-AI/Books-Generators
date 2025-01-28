@@ -51,6 +51,16 @@
     "manager": {
         "path": "manager.js",
         "name": "Manager"
+    },
+    "plugins": {
+        "document": [
+            {
+                "name": "Generate Book",
+                "componentName": "books-generator-modal",
+                "icon": "/assets/icons/book.svg",
+                "presenterClassName": "BooksGeneratorModal"
+            }
+        ]
     }
 }
 
