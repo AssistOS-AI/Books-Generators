@@ -55,10 +55,10 @@
     "plugins": {
         "document": [
             {
-                "name": "Generate Book",
-                "componentName": "books-generator-modal",
+                "tooltip": "Generate Book",
+                "component": "books-generator-modal",
                 "icon": "/assets/icons/book.svg",
-                "presenterClassName": "BooksGeneratorModal"
+                "presenter": "BooksGeneratorModal"
             }
         ]
     }
